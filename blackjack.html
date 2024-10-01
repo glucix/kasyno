@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="blackjack.css">
+    <link rel="shortcut icon" href="photos/tlologa.png" type="image/x-icon">
+</head>
+<body>
+    <a href="index.html">POWROT</a>
+    <div class="container">
+        <h1>Blackjack</h1>
+        <div class="game">
+            <div class="player-hand">
+                <h2>Twoje karty:</h2>
+                <div id="playerCards" class="card-container"></div>
+                <p>Wartość: <span id="playerValue">0</span></p>
+            </div>
+            <div class="dealer-hand">
+                <h2>Karty krupiera:</h2>
+                <div id="dealerCards" class="card-container"></div>
+                <p>Wartość: <span id="dealerValue">0</span></p>
+            </div>
+            <div class="controls">
+                <button id="startGame">Nowa gra</button>
+                <button id="hit">Dobierz kartę</button>
+                <button id="stand">Stop</button>
+            </div>
+            <p id="gameResult"></p>
+        </div>
+    </div>
+    <script src="blackjack.js"></script>
+</body>
+</html>

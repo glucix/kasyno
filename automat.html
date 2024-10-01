@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasyno - Automat do Gry</title>
+    <link rel="stylesheet" href="automat.css">
+    <link rel="shortcut icon" href="photos/tlologa.png" type="image/x-icon">
+</head>
+<body>
+    <div>
+        <a href="index.html">POWROT</a>
+    </div>
+    <div class="container">
+        <h1>Automat do Gry</h1>
+        <div class="info">
+            <p>Stan konta: <span id="balance">500</span> zł</p>
+            <p>Wybierz stawkę:</p>
+            <select id="betAmount">
+                <option value="10">10 zł</option>
+                <option value="20">20 zł</option>
+                <option value="50">50 zł</option>
+                <option value="100">100 zł</option>
+                <option value="300">300 zł</option>
+                <option value="500">500 zł</option>
+                <option value="5000">5000 zł</option>
+                <option value="10000">10000 zł</option>
+            </select>
+        </div>
+        <div class="slot-machine">
+            <div class="slot" id="slot1">🍒</div>
+            <div class="slot" id="slot2">🍋</div>
+            <div class="slot" id="slot3">🍊</div>
+        </div>
+        <button id="spinButton">Zakręć!</button>
+        <p id="result"></p>
+    </div>
+    <script src="automat.js"></script>
+</body>
+</html>

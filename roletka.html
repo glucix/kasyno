@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruletka</title>
+    <link rel="stylesheet" href="roletka.css">
+    <link rel="shortcut icon" href="photos/tlologa.png" type="image/x-icon">
+</head>
+<body>
+    <a href="index.html">POWROT</a>
+    <div class="container">
+        <h1>Ruletka</h1>
+        <div id="rouletteWheel" class="wheel">
+            <div class="slot" style="background-color: red;">1</div>
+            <div class="slot" style="background-color: black;">2</div>
+            <div class="slot" style="background-color: red;">3</div>
+            <div class="slot" style="background-color: black;">4</div>
+            <div class="slot" style="background-color: red;">5</div>
+            <div class="slot" style="background-color: black;">6</div>
+            <div class="slot" style="background-color: red;">7</div>
+            <div class="slot" style="background-color: black;">8</div>
+            <div class="slot" style="background-color: red;">9</div>
+            <div class="slot" style="background-color: black;">10</div>
+            <div class="slot" style="background-color: red;">11</div>
+            <div class="slot" style="background-color: black;">12</div>
+            <div class="slot" style="background-color: red;">13</div>
+            <div class="slot" style="background-color: black;">14</div>
+            <div class="slot" style="background-color: red;">15</div>
+            <div class="slot" style="background-color: black;">16</div>
+            <div class="slot" style="background-color: red;">17</div>
+            <div class="slot" style="background-color: black;">18</div>
+            <div class="slot" style="background-color: red;">19</div>
+            <div class="slot" style="background-color: black;">20</div>
+        </div>
+        <div>
+            <input type="number" id="betNumber" placeholder="Obstaw numer (1-20)" min="1" max="20">
+            <button id="placeBet">Postaw</button>
+        </div>
+        <button id="spinButton">Zakręć!</button>
+        <p id="result"></p>
+        <h2>Historia wyników:</h2>
+        <ul id="history"></ul>
+    </div>
+    <audio id="spinSound" src="sounds/"></audio>
+    <audio id="winSound" src="win.mp3"></audio>
+    <script src="roletka.js"></script>
+</body>
+</html>
