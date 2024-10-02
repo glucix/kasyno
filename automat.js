@@ -10,7 +10,7 @@ const betAmountSelect = document.getElementById("betAmount"); // Selektor stawek
 let balance = 500; // Początkowy stan konta gracza
 const symbols = ["🍒", "🍋", "🍊", "🍇", "🍉"];
 let spinningInterval;  // Zmienna do przechowywania ID interwału
-let winChance = 0.15; // Ustalmy, że gracz ma 30% szans na wygraną
+let winChance = 0.45; // Ustalmy, że gracz ma 30% szans na wygraną
 
 spinButton.addEventListener("click", function() {
     const spinCost = parseInt(betAmountSelect.value); // Pobierz wybraną stawkę
