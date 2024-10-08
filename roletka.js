@@ -20,7 +20,7 @@ spinButton.addEventListener('click', () => {
 
     isSpinning = true; // Ustaw flagę, aby zablokować wielokrotne kręcenie
     const randomDegree = Math.floor(Math.random() * 360) + 720; // Minimum 720 stopni dla dodatkowego obrotu
-    wheel.style.transform = `rotate(${randomDegree}deg)`;
+    wheel.style.transform = `translateX(-${randomDegree}px)`; // Przesuwamy ruletkę poziomo
     spinSound.play();
 
     setTimeout(() => {
