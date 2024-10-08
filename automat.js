@@ -5,20 +5,29 @@ const result = document.getElementById("result");
 const spinButton = document.getElementById("spinButton");
 
 const balanceDisplay = document.getElementById("balance");
-const betAmountSelect = document.getElementById("betAmount"); // Selektor stawek
+const betAmountInput = document.getElementById("betAmount"); // Pole tekstowe do wprowadzania stawki
 
 let balance = 500; // Początkowy stan konta gracza
 const symbols = ["🍒", "🍋", "🍊", "🍇", "🍉"];
 let spinningInterval;  // Zmienna do przechowywania ID interwału
-let winChance = 0.45; // Ustalmy, że gracz ma 30% szans na wygraną
+let winChance = 0.45; // Ustalmy, że gracz ma 45% szans na wygraną
 
 spinButton.addEventListener("click", function() {
-    const spinCost = parseInt(betAmountSelect.value); // Pobierz wybraną stawkę
+    const spinCost = parseInt(betAmountInput.value); // Pobierz wpisaną stawkę
+
+    // Sprawdzenie, czy wpisano poprawną kwotę
+    if (isNaN(spinCost) || spinCost <= 0) {
+        result.textContent = "Proszę wpisać poprawną kwotę!";
+        return;
+    }
 
     if (balance < spinCost) {
         result.textContent = "Nie masz wystarczająco pieniędzy, aby zakręcić!";
         return;
     }
+
+    // Wyłącz przycisk Zakręć, aby zapobiec spamowi
+    spinButton.disabled = true;
 
     // Odejmujemy koszt zakręcenia
     balance -= spinCost;
@@ -31,7 +40,7 @@ spinButton.addEventListener("click", function() {
     setTimeout(() => {
         let spin1, spin2, spin3;
 
-        // Zwiększamy szanse na wygraną (30% szans na trzy identyczne symbole)
+        // Zwiększamy szanse na wygraną (45% szans na trzy identyczne symbole)
         if (Math.random() < winChance) {
             // Jeśli gracz ma wygrać, ustawiamy trzy takie same symbole
             const winningSymbol = getRandomSymbol();
@@ -62,6 +71,9 @@ spinButton.addEventListener("click", function() {
         } else {
             result.textContent = "Spróbuj ponownie!";
         }
+
+        // Po zakończeniu kręcenia, ponownie aktywuj przycisk
+        spinButton.disabled = false;
     }, 2000); // 2 sekundy "kręcenia"
 });
 
