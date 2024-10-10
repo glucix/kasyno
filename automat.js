@@ -125,7 +125,7 @@ function updateBalance() {
 }
 
 function calculateWin(spinCost) {
-    return Math.floor(Math.random() * 51) + spinCost * 200;
+    return Math.floor(Math.random() * 51) + spinCost * 3;
 }
 
 function startSpinning() {
