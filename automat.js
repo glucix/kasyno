@@ -11,7 +11,7 @@ const betAmountInput = document.getElementById("betAmount");
 let balance = 250; // Początkowy stan konta gracza
 const symbols = ["🍒", "🍋", "🍊", "🍇", "🍉"];
 let spinningInterval;
-let winChance = 0.50; // Ustalmy, że gracz ma 45% szans na wygraną
+let winChance = 0.75; // Ustalmy, że gracz ma 45% szans na wygraną
 
 spinButton.addEventListener("click", function() {
     const spinCost = parseInt(betAmountInput.value);
