@@ -7,10 +7,10 @@ const spinButton = document.getElementById("spinButton");
 const balanceDisplay = document.getElementById("balance");
 const betAmountInput = document.getElementById("betAmount"); // Pole tekstowe do wprowadzania stawki
 
-let balance = 500; // Początkowy stan konta gracza
+let balance = 25000; // Początkowy stan konta gracza
 const symbols = ["🍒", "🍋", "🍊", "🍇", "🍉"];
 let spinningInterval;  // Zmienna do przechowywania ID interwału
-let winChance = 0.45; // Ustalmy, że gracz ma 45% szans na wygraną
+let winChance = 0.95; // Ustalmy, że gracz ma 45% szans na wygraną
 
 spinButton.addEventListener("click", function() {
     const spinCost = parseInt(betAmountInput.value); // Pobierz wpisaną stawkę
