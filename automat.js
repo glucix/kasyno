@@ -86,7 +86,7 @@ function updateBalance() {
 }
 
 function calculateWin(spinCost) {
-    return Math.floor(Math.random() * 51) + spinCost * 5; // Nagroda zależna od stawki (np. 5x stawka)
+    return Math.floor(Math.random() * 51) + spinCost * 200; // Nagroda zależna od stawki (np. 5x stawka)
 }
 
 // Funkcje do uruchamiania i zatrzymywania "animacji"
