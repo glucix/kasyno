@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasyno - Automat do Gry</title>
-    <link rel="stylesheet" href="automat.css">
+    <title>Kasyno - Automat do Gry (9 Slotów)</title>
+    <link rel="stylesheet" href="slots.css">
     <link rel="shortcut icon" href="photos/tlologa.png" type="image/x-icon">
 </head>
 <body>
-    <button class="back-button" onclick="window.history.back()">Powrot</button>
+    <button class="back-button" onclick="window.history.back()">Powrót</button>
     <div class="container">
-        <h1>Automat do Gry</h1>
+        <h1>Automat do Gry (9 Slotów)</h1>
         <div class="info">
-            <p>Stan konta: <span id="balance">250</span> zł</p>
+            <p>Stan konta: <span id="balance">1600</span> zł</p>
             <p>Wpisz stawkę:</p>
             <input type="number" id="betAmount" min="1" placeholder="Wpisz kwotę" />
         </div>
@@ -20,11 +20,17 @@
             <div class="slot" id="slot1">🍒</div>
             <div class="slot" id="slot2">🍋</div>
             <div class="slot" id="slot3">🍊</div>
+            <div class="slot" id="slot4">🍇</div>
+            <div class="slot" id="slot5">🍉</div>
+            <div class="slot" id="slot6">🍒</div>
+            <div class="slot" id="slot7">🍋</div>
+            <div class="slot" id="slot8">🍊</div>
+            <div class="slot" id="slot9">🍇</div>
         </div>
         <button id="spinButton">Zakręć!</button>
         <button id="allInButton">All In</button>
         <p id="result"></p>
     </div>
-    <script src="automat.js"></script>
+    <script src="slots.js"></script>
 </body>
 </html>

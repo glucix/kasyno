@@ -1,20 +1,21 @@
+const slots = [];
+for (let i = 1; i <= 9; i++) {
+    slots.push(document.getElementById(`slot${i}`));
+}
 
-const slot1 = document.getElementById("slot1");
-const slot2 = document.getElementById("slot2");
-const slot3 = document.getElementById("slot3");
 const result = document.getElementById("result");
 const spinButton = document.getElementById("spinButton");
-const allInButton = document.getElementById("allInButton"); // Dodano przycisk All In
+const allInButton = document.getElementById("allInButton");
 
 const balanceDisplay = document.getElementById("balance");
 const betAmountInput = document.getElementById("betAmount");
 
-let balance = 250; // Początkowy stan konta gracza
+let balance = 1600;
 const symbols = ["🍒", "🍋", "🍊", "🍇", "🍉"];
 let spinningInterval;
-let winChance = 0.75; // Ustalmy, że gracz ma 45% szans na wygraną
+let winChance = 0.75;
 
-spinButton.addEventListener("click", function() {
+spinButton.addEventListener("click", function () {
     const spinCost = parseInt(betAmountInput.value);
 
     if (isNaN(spinCost) || spinCost <= 0) {
@@ -35,26 +36,26 @@ spinButton.addEventListener("click", function() {
     startSpinning();
 
     setTimeout(() => {
-        let spin1, spin2, spin3;
+        let spins = [];
 
         if (Math.random() < winChance) {
             const winningSymbol = getRandomSymbol();
-            spin1 = winningSymbol;
-            spin2 = winningSymbol;
-            spin3 = winningSymbol;
+            for (let i = 0; i < 9; i++) {
+                spins.push(winningSymbol);
+            }
         } else {
-            spin1 = getRandomSymbol();
-            spin2 = getRandomSymbol();
-            spin3 = getRandomSymbol();
+            for (let i = 0; i < 9; i++) {
+                spins.push(getRandomSymbol());
+            }
         }
 
         stopSpinning();
 
-        slot1.textContent = spin1;
-        slot2.textContent = spin2;
-        slot3.textContent = spin3;
+        slots.forEach((slot, index) => {
+            slot.textContent = spins[index];
+        });
 
-        if (spin1 === spin2 && spin2 === spin3) {
+        if (spins.every((symbol) => symbol === spins[0])) {
             const winAmount = calculateWin(spinCost);
             balance += winAmount;
             updateBalance();
@@ -67,7 +68,7 @@ spinButton.addEventListener("click", function() {
     }, 2000);
 });
 
-allInButton.addEventListener("click", function() {
+allInButton.addEventListener("click", function () {
     const allInAmount = balance;
 
     if (balance <= 0) {
@@ -84,26 +85,26 @@ allInButton.addEventListener("click", function() {
     startSpinning();
 
     setTimeout(() => {
-        let spin1, spin2, spin3;
+        let spins = [];
 
         if (Math.random() < winChance) {
             const winningSymbol = getRandomSymbol();
-            spin1 = winningSymbol;
-            spin2 = winningSymbol;
-            spin3 = winningSymbol;
+            for (let i = 0; i < 9; i++) {
+                spins.push(winningSymbol);
+            }
         } else {
-            spin1 = getRandomSymbol();
-            spin2 = getRandomSymbol();
-            spin3 = getRandomSymbol();
+            for (let i = 0; i < 9; i++) {
+                spins.push(getRandomSymbol());
+            }
         }
 
         stopSpinning();
 
-        slot1.textContent = spin1;
-        slot2.textContent = spin2;
-        slot3.textContent = spin3;
+        slots.forEach((slot, index) => {
+            slot.textContent = spins[index];
+        });
 
-        if (spin1 === spin2 && spin2 === spin3) {
+        if (spins.every((symbol) => symbol === spins[0])) {
             const winAmount = calculateWin(allInAmount);
             balance += winAmount;
             updateBalance();
@@ -126,14 +127,14 @@ function updateBalance() {
 }
 
 function calculateWin(spinCost) {
-    return Math.floor(Math.random() * 51) + spinCost * 3;
+    return Math.floor(Math.random() * 51) + spinCost * 6;
 }
 
 function startSpinning() {
     spinningInterval = setInterval(() => {
-        slot1.textContent = getRandomSymbol();
-        slot2.textContent = getRandomSymbol();
-        slot3.textContent = getRandomSymbol();
+        slots.forEach(slot => {
+            slot.textContent = getRandomSymbol();
+        });
     }, 100);
 }
 

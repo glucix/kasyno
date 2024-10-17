@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4b4a4a, #495555);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #f39c12;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #ffffff;
+}
+
+.info {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.slot-machine {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Zmieniono na siatkę 3x3 */
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    background-color: #34495e;
+    border-radius: 10px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+#result {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+}

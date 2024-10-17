@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 1200px; /* Zwiększona szerokość dla pełnych obrotów */
     margin: 0 auto;
 }
 
@@ -23,7 +23,7 @@ h1 {
 }
 
 .wheel-container {
-    width: 250px;
+    width: 600px; /* Zwiększona szerokość kontenera */
     height: 100px;
     margin: 0 auto;
     overflow: hidden; /* Ukrywa niepotrzebne sloty */
@@ -35,6 +35,7 @@ h1 {
     display: flex;
     width: max-content; /* Koło będzie miało długość odpowiadającą liczbie slotów */
     transition: transform 4s ease-out; /* Dodana płynność obrotu */
+    transform: translateX(0px); /* Początkowy stan */
 }
 
 .slot {
@@ -44,6 +45,7 @@ h1 {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
+    border-right: 1px solid #fff; /* Dodatkowe oddzielenie slotów */
 }
 
 button {
@@ -73,4 +75,19 @@ input {
     font-size: 1rem;
     margin: 10px;
     width: 80%;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #c82333;
 }

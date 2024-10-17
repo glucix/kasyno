@@ -104,3 +104,28 @@ a{
     background-color: #34495e;
     backdrop-filter: blur(55px);
 }
+.back-button {
+    position: fixed; /* Przyklejenie przycisku do konkretnej pozycji na ekranie */
+    top: 20px; /* Odległość od górnej krawędzi ekranu */
+    left: 20px; /* Odległość od lewej krawędzi ekranu */
+    background-color: #000000; /* Czerwone tło */
+    color: white; /* Biały tekst */
+    border: none; /* Brak domyślnej ramki */
+    padding: 15px 30px; /* Wewnętrzne odstępy dla przycisku */
+    font-size: 18px; /* Wielkość czcionki */
+    border-radius: 50px; /* Zaokrąglone krawędzie */
+    cursor: pointer; /* Zmieniony kursor na "rączkę" */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lekki cień pod przyciskiem */
+    transition: all 0.3s ease; /* Płynna animacja dla efektów hover */
+}
+
+.back-button:hover {
+    background-color: #615f5f; /* Ciemniejszy czerwony przy hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Większy cień przy hover */
+    transform: scale(1.05); /* Przybliżenie przy hover */
+}
+
+.back-button:active {
+    transform: scale(0.95); /* Pomniejszenie przy kliknięciu */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Mniejszy cień przy kliknięciu */
+}
