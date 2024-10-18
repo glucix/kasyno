@@ -104,28 +104,94 @@ a{
     background-color: #34495e;
     backdrop-filter: blur(55px);
 }
-.back-button {
-    position: fixed; /* Przyklejenie przycisku do konkretnej pozycji na ekranie */
+.animated-button {
+    position: fixed; /* Pozycja przycisku zostanie "przyklejona" do ekranu */
     top: 20px; /* Odległość od górnej krawędzi ekranu */
     left: 20px; /* Odległość od lewej krawędzi ekranu */
-    background-color: #000000; /* Czerwone tło */
-    color: white; /* Biały tekst */
-    border: none; /* Brak domyślnej ramki */
-    padding: 15px 30px; /* Wewnętrzne odstępy dla przycisku */
-    font-size: 18px; /* Wielkość czcionki */
-    border-radius: 50px; /* Zaokrąglone krawędzie */
-    cursor: pointer; /* Zmieniony kursor na "rączkę" */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lekki cień pod przyciskiem */
-    transition: all 0.3s ease; /* Płynna animacja dla efektów hover */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: rgb(134, 134, 134);
+    box-shadow: 0 0 0 2px rgb(235, 235, 235);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1000; /* Zapewni, że przycisk będzie widoczny nad innymi elementami */
 }
 
-.back-button:hover {
-    background-color: #615f5f; /* Ciemniejszy czerwony przy hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Większy cień przy hover */
-    transform: scale(1.05); /* Przybliżenie przy hover */
-}
-
-.back-button:active {
-    transform: scale(0.95); /* Pomniejszenie przy kliknięciu */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Mniejszy cień przy kliknięciu */
-}
+  
+  .animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: rgb(196, 197, 196);
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+  
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+  
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: rgb(180, 182, 178);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+  
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .animated-button:hover svg {
+    fill: #212121;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px rgb(81, 82, 81);
+  }
+  
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
