@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Tower Game</title>
+    <link rel="stylesheet" href="dragon.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Betting Panel -->
+        <div class="betting-panel">
+            <h2>Betting Options</h2>
+            <label for="bet-amount">Bet Amount</label>
+            <input type="number" id="bet-amount" value="0.00" step="0.01">
+            <div class="bet-buttons">
+                <button id="half-bet">1/2</button>
+                <button id="double-bet">2x</button>
+            </div>
+
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="place-bet">Place Bet</button>
+            <button id="reset-game">Reset</button>
+        </div>
+
+        <!-- Dragon Tower -->
+        <div class="dragon-tower">
+            <div class="dragon-head"></div>
+            <div class="grid-container" id="grid">
+                <!-- Grid tiles will be generated here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="draagon.js"></script>
+</body>
+</html>
