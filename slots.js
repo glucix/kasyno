@@ -13,7 +13,7 @@ const betAmountInput = document.getElementById("betAmount");
 let balance = 1600;
 const symbols = ["🍒", "🍋", "🍊", "🍇", "🍉"];
 let spinningInterval;
-let winChance = 0.99;
+let winChance = 0.50;
 
 spinButton.addEventListener("click", function () {
     const spinCost = parseInt(betAmountInput.value);
